@@ -7,5 +7,25 @@
 <body>
   <h1>Hello World, John S</h1>
   <p>첫 번째 배포 테스트 - 2026.06.29</p>
+  <p>현재 시각: <span id="clock"></span></p>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const formatted = now.toLocaleString("ko-KR", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      });
+      document.getElementById("clock").textContent = formatted;
+    }
+
+    updateClock();              // 페이지 열리자마자 한 번 표시
+    setInterval(updateClock, 1000);  // 1초마다 갱신
+  </script>
 </body>
 </html>
